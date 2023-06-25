@@ -5,6 +5,15 @@
  */
 package paquete01;
 
+import java.util.ArrayList;
+import java.util.List;
+import paquete0.Cuenta;
+import paquete0.Menu;
+import paquete0.MenuCarta;
+import paquete0.MenuDia;
+import paquete0.MenuEconomico;
+import paquete0.MenuNinos;
+
 /**
  *
  * @author reroes
@@ -16,6 +25,34 @@ public class Ejecutor01 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+         List<Menu> lista = new ArrayList<>();
+
+        MenuNinos ninos =  new MenuNinos(1, 1.5, "Niños 01",2);
+        ninos.calcularValorMenu();
+        lista.add(ninos);
+
+        MenuNinos menuNinios02 = new MenuNinos(1, 1.5, "Niños 02",3);
+        menuNinios02.calcularValorMenu();
+        lista.add(menuNinios02);
+
+        MenuEconomico econ = new MenuEconomico(25, "Econo 001", 4);
+        econ.calcularValorMenu();
+        lista.add(econ);
+
+        MenuDia dia = new MenuDia(1, 1, "Dia 001", 5);
+        dia.calcularValorMenu();
+        lista.add(dia);
+
+        MenuCarta carta =new MenuCarta(1.5, 2, 10, "Carta001",
+                        6);
+        carta.calcularValorMenu();
+        lista.add(carta);
+
+        Cuenta cuenta = new Cuenta("René Elizalde", lista, 10);
+        cuenta.calcularValorSubtotal();
+        cuenta.calcularValorTotal();
+
+        System.out.println(cuenta);
     }
     
     
